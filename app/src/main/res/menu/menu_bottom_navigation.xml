@@ -1,0 +1,33 @@
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <item
+        android:id="@+id/entreprise"
+        android:enabled="true"
+        android:title="Entreprises"
+        android:checked="true"
+        
+
+        />
+    <item
+        android:id="@+id/mywork"
+        android:enabled="true"
+        android:title="MyWork"
+        android:checked="true"
+
+        />
+    <item
+    android:id="@+id/myprofile"
+    android:enabled="true"
+    android:title="Myprofile"
+        android:checked="true"
+
+
+        />
+
+
+
+
+
+</menu>
