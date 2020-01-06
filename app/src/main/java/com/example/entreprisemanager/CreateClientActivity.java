@@ -114,7 +114,7 @@ public class CreateClientActivity extends AppCompatActivity {
 
         // Instantiate the RequestQueue.
         final RequestQueue queue = Volley.newRequestQueue(this);
-        final String url ="http://192.168.2.124:8080/api/entreprises/clients/";
+        final String url ="http://192.168.43.139:8080/api/entreprises/clients/";
 
 
         final JSONObject U = new JSONObject();

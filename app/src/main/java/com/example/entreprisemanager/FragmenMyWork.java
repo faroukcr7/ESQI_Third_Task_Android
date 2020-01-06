@@ -41,7 +41,7 @@ import java.util.Map;
  */
 public class FragmenMyWork extends Fragment {
 
-    ArrayList<ModelWork> listentreprises ;
+    ArrayList<ModelWork> listworks ;
     TabledbHelper dbHelper;
     RecyclerView recyclerView;
 
@@ -55,7 +55,7 @@ public class FragmenMyWork extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        listentreprises=new ArrayList<ModelWork>();
+        listworks=new ArrayList<ModelWork>();
         dbHelper = new TabledbHelper(getContext()) ;
         recyclerView= (RecyclerView) view.findViewById(R.id.ReceyclerViewMyWork);
 
@@ -64,9 +64,11 @@ public class FragmenMyWork extends Fragment {
                     @Override
                     public void onItemClicked(RecyclerView recyclerView, int position, View v) {
                         // do it
-                        Log.d("CLICKED" ,String.valueOf(listentreprises.get(position).getId_work()) );
+                        Log.d("CLICKED" ,String.valueOf(listworks.get(position).getId_work()) );
                         Intent intent = new Intent(getContext(), MyWorkDetailsActivity.class);
-                        intent.putExtra("entreprise_name", String.valueOf(listentreprises.get(position).getEntreprise_name()));
+                        intent.putExtra("entreprise_name", String.valueOf(listworks.get(position).getEntreprise_name()));
+                        intent.putExtra("id_work", String.valueOf(listworks.get(position).getId_work()));
+
                         startActivity(intent);
                     }
                 });
@@ -75,7 +77,7 @@ public class FragmenMyWork extends Fragment {
         final String Token = viewAll();
         Log.d("TAG", Token.toString());
         final RequestQueue queue = Volley.newRequestQueue(getContext());
-        String url = "http://192.168.2.124:8080/api/users/me";
+        String url = "http://192.168.43.139:8080/api/users/me";
 
         final JSONObject U = new JSONObject();
         try {
@@ -101,11 +103,11 @@ public class FragmenMyWork extends Fragment {
                                 jsonArray.getJSONObject(i).getString("client_name")
                         ) ;
 
-                        listentreprises.add(modelWork);
+                        listworks.add(modelWork);
                     }
 
                     // Create adapter passing in the sample user data
-                    AdapterWork adapter = new AdapterWork(listentreprises);
+                    AdapterWork adapter = new AdapterWork(listworks);
                     // Attach the adapter to the recyclerview to populate items
                     recyclerView.setAdapter(adapter);
                     // Set layout manager to position the items

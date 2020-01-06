@@ -36,7 +36,9 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_marginTop="41dp"
-            android:id="@+id/button" />
+            android:id="@+id/button"
+            android:onClick="start"
+            />
 
         <Button
             android:text="Pause"
@@ -45,7 +47,9 @@
             android:id="@+id/button2"
             android:layout_alignBaseline="@+id/button"
             android:layout_alignBottom="@+id/button"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            android:onClick="pause"
+            />
 
         <Button
             android:text="Reset"
@@ -54,7 +58,9 @@
             android:layout_alignTop="@+id/button2"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
-            android:id="@+id/button3" />
+            android:id="@+id/button3"
+            android:onClick="reset"
+            />
 
         <Button
             android:text="Save Lap"
@@ -63,7 +69,9 @@
             android:layout_marginTop="24dp"
             android:id="@+id/button4"
             android:layout_below="@+id/button"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            android:onClick="lap"
+            />
 
         <ListView
             android:layout_width="match_parent"

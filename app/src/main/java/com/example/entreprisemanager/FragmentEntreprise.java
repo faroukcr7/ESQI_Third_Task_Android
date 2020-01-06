@@ -82,7 +82,7 @@ public class FragmentEntreprise extends Fragment {
         final String Token = viewAll();
         Log.d("TAG", Token.toString());
         final RequestQueue queue = Volley.newRequestQueue(getContext());
-        String url = "http://192.168.2.124:8080/api/users/me";
+        String url = "http://192.168.43.139:8080/api/users/me";
 
         final JSONObject U = new JSONObject();
         try {
